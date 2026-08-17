@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 from paginas.adicionar_registro import adicionar_registro
 from paginas.dashboard import dashboard
 from paginas.gerenciar_registros import gerenciar_registros
-from paginas.importar_planilhas import importar_planilhas
 from paginas.ver_despesas import ver_despesas
 
 
@@ -38,8 +37,7 @@ menu = st.sidebar.radio(
         "Dashboard",
         "Ver por categoria",
         "Adicionar Registro",
-        "Gerenciar Registros",
-        "Importar planilha"
+        "Gerenciar Registros"
     ]
 )
 
@@ -54,9 +52,6 @@ elif menu == "Dashboard":
 
 elif menu == "Gerenciar Registros":
     gerenciar_registros()
-
-elif menu == "Importar planilha":
-    importar_planilhas()
 
 elif menu == "Ver por categoria":
     ver_despesas()
