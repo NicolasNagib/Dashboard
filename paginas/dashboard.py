@@ -12,9 +12,23 @@ cores = {
 
 def dashboard():
     df = carregar_dados()
+    
+    meses = {
+    1: "Janeiro",
+    2: "Fevereiro",
+    3: "Março",
+    4: "Abril",
+    5: "Maio",
+    6: "Junho",
+    7: "Julho",
+    8: "Agosto",
+    9: "Setembro",
+    10: "Outubro",
+    11: "Novembro",
+    12: "Dezembro"
+    }
 
-    df["mes_num"] = df["data"].dt.month
-    df["mes_nome"] = df["data"].dt.month_name(locale="pt_BR")
+    df["mes_nome"] = df["data"].dt.month.map(meses)
 
     mapa_meses = dict(zip(df["mes_nome"], df["mes_num"]))
     lista_meses = sorted(df["mes_nome"].unique(), key=lambda x: mapa_meses[x])
