@@ -28,6 +28,7 @@ def dashboard():
     12: "Dezembro"
     }
 
+    df["mes_num"] = df["data"].dt.month
     df["mes_nome"] = df["data"].dt.month.map(meses)
 
     mapa_meses = dict(zip(df["mes_nome"], df["mes_num"]))
