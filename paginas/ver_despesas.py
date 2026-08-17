@@ -20,8 +20,23 @@ def ver_despesas():
    
         # Lista de meses disponíveis
          # Mapeamento meses
+        meses = {
+            1: "Janeiro",
+            2: "Fevereiro",
+            3: "Março",
+            4: "Abril",
+            5: "Maio",
+            6: "Junho",
+            7: "Julho",
+            8: "Agosto",
+            9: "Setembro",
+            10: "Outubro",
+            11: "Novembro",
+            12: "Dezembro"
+            }
+        
         df_despesas["mes_num"] = df_despesas["data"].dt.month
-        df_despesas["mes_nome"] = df_despesas["data"].dt.month_name(locale="pt_BR")
+        df_despesas["mes_nome"] = df_despesas["data"].dt.month.map(meses)
     
         mapa_meses = dict(zip(df_despesas["mes_nome"], df_despesas["mes_num"]))
         lista_meses = sorted(df_despesas["mes_nome"].unique(), key=lambda x: mapa_meses[x])
