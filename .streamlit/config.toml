@@ -1,0 +1,6 @@
+[client]
+language = "pt-br"
+
+[theme.dark]
+primaryColor = "#0043d3d2"
+backgroundColor = "#000"
